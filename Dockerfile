@@ -7,4 +7,4 @@ ENV KC_DB_URL=postgresql://keycloak_5yl1_user:CVihhIvvYSkBuhzGV8iAk1sN1cz6YEot@d
 ENV KC_DB_USERNAME=keycloak_5yl1_user
 ENV KC_DB_PASSWORD=CVihhIvvYSkBuhzGV8iAk1sN1cz6YEot
 
-CMD ["start-dev"]
+CMD ["keycloak", "start-dev"]
