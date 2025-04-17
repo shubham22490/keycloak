@@ -10,4 +10,4 @@ ENV KC_PROXY=edge
 # This is critical for Render to detect the port
 EXPOSE 10000
 
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=10000", "--http-enabled=true"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=${PORT}", "--http-enabled=true"]
