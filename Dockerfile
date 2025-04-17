@@ -1,8 +1,7 @@
 FROM quay.io/keycloak/keycloak:24.0.1
 
-ENV KEYCLOAK_ADMIN=admin
-ENV KEYCLOAK_ADMIN_PASSWORD=admin
+ENV KC_DB=postgres
+ENV KC_HEALTH_ENABLED=true
+ENV KC_METRICS_ENABLED=true
 
-RUN /opt/keycloak/bin/kc.sh build --db=postgres
-
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--http-port=8080", "--hostname-strict=false"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
