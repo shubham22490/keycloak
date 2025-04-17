@@ -4,8 +4,11 @@ ENV KC_DB=postgres
 ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 
-# Copy startup script into a writable folder
-COPY startup.sh /usr/local/bin/startup.sh
-RUN chmod +x /usr/local/bin/startup.sh
+# Copy startup.sh from the local directory into the container
+COPY startup.sh /opt/keycloak/startup.sh
 
-ENTRYPOINT ["/usr/local/bin/startup.sh"]
+# Mark it as executable
+# RUN chmod +x /opt/keycloak/startup.sh
+
+# Run the script
+ENTRYPOINT ["/opt/keycloak/startup.sh"]
